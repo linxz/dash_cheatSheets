@@ -1707,7 +1707,7 @@ cheatsheet do
 
         **注意: `export` 方法每次调用后会清掉之前的动画操作**
 
-        [https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxrelaunchobject](https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxrelaunchobject)
+        [https://developers.weixin.qq.com/miniprogram/dev/api/api-animation.html#wxcreateanimationobject](https://developers.weixin.qq.com/miniprogram/dev/api/api-animation.html#wxcreateanimationobject)
       END
     end
     entry do
