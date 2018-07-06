@@ -438,6 +438,25 @@ cheatsheet do
         [https://developers.weixin.qq.com/miniprogram/dev/api/api-live-pusher.html](https://developers.weixin.qq.com/miniprogram/dev/api/api-live-pusher.html)
       END
     end
+    entry do
+      name '★ [动态加载字体](https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html)'
+    end
+    entry do
+      command 'wx.loadFontFace'
+      notes <<-'END'
+        ```
+        wx.loadFontFace(OBJECT)
+        ```
+
+        动态加载网络字体
+
+        **基础库 2.1.0 开始支持，低版本需做兼容处理**
+
+        引入的外部字体资源，建议格式为TTF和WOFF，WOFF2在低版本的IOS上会不兼容。
+
+        [https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html](https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html)
+      END
+    end
   end
 
   category do
@@ -3559,6 +3578,24 @@ cheatsheet do
   end
 
   category do
+    id '监控数据上报'
+    entry do
+      command 'wx.reportMonitor'
+      notes <<-'END'
+        自定义业务数据监控上报接口。使用前，需要在小程序管理后台-运维中心-性能监控-业务数据监控中新建监控事件，配置监控描述与告警类型。每一个监控事件对应唯一的监控ID，开发者最多可以创建128个监控事件。
+
+        ```
+        wx.reportMonitor(name, value)
+        ```
+
+        **基础库 2.0.1 开始支持，低版本需做兼容处理**
+
+        [https://developers.weixin.qq.com/miniprogram/dev/api/monitor-report.html](https://developers.weixin.qq.com/miniprogram/dev/api/monitor-report.html)
+      END
+    end
+  end
+
+  category do
     id '调试接口'
     entry do
       command 'wx.setEnableDebug'
@@ -3568,6 +3605,22 @@ cheatsheet do
         **基础库 1.4.0 开始支持，低版本需做兼容处理**
 
         [https://developers.weixin.qq.com/miniprogram/dev/api/setEnableDebug.html](https://developers.weixin.qq.com/miniprogram/dev/api/setEnableDebug.html)
+      END
+    end
+  end
+
+  category do
+    id '日志'
+    entry do
+      command 'wx.getLogManager()'
+      notes <<-'END'
+        获取日志管理器 logManager 对象。logManager提供log、info、warn、debug四个方法写日志到文件，这四个方法接受任意个类型为Object/Array/Number/String的参数，每次调用的参数的总大小不超过100Kb。最多保存5M的日志内容，超过5M后，旧的日志内容会被删除。用户可以通过设置Button组件 的open-type为feedback来上传打印的日志。用户上传的日志可以通过登录小程序管理后台后进入左侧菜单“客服反馈”页面获取到。
+
+        基础库默认会把App、Page的生命周期函数和wx命名空间下的函数调用写入日志。
+
+        **基础库 2.1.0 开始支持，低版本需做兼容处理**
+
+        [https://developers.weixin.qq.com/miniprogram/dev/api/getLogManager.html](https://developers.weixin.qq.com/miniprogram/dev/api/getLogManager.html)
       END
     end
   end
